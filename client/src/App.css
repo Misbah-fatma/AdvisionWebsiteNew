@@ -1,0 +1,365 @@
+
+
+.container1 {
+  display: grid;
+  align-items: center; 
+  grid-template-columns: .5fr 1fr 1fr;
+  column-gap: 5px;
+ }
+ 
+ img {
+   max-width: 100%;
+   max-height:100%;
+ }
+ 
+ .text {
+   font-size: 70px;
+ }
+
+ .text-glow {
+  color: #fff; /* Adjust the text color as needed */
+  text-shadow: 0 0 10px rgb(104, 227, 229), 0 0 20px rgb(97, 173, 236), 0 0 30px rgb(71, 180, 224);
+}
+
+.price-tag {
+  display: block;
+  font-size: 16px;
+  color: #3c3e40;
+  margin-top: 10px;
+  font-weight: 500;
+  background-color: aliceblue;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white; /* Adjust as per your design */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow effect */
+}
+
+#header .container {
+  padding: 10px 20px; /* Adjust the padding as needed */
+}
+
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+.newsletter-subscribe {
+  color: #313437;
+  background-color: #ffffff;
+  padding: 55px 74px;
+}
+
+.newsletter-subscribe p {
+  color: #7d8285;
+  line-height: 1.5;
+}
+
+.newsletter-subscribe h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  padding-top: 0;
+  margin-top: 0;
+  color: inherit;
+}
+
+.newsletter-subscribe .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 25px;
+}
+
+.newsletter-subscribe .intro p {
+  margin-bottom: 35px;
+}
+
+.newsletter-subscribe form {
+  justify-content: center;
+}
+
+.newsletter-subscribe form .form-control {
+  background: #eff1f4;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 9px;
+  height: 45px;
+  margin-right: 10px;
+  min-width: 250px;
+}
+
+.newsletter-subscribe form .btn {
+  padding: 16px 32px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  text-shadow: none;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  line-height: 1;
+}
+
+.newsletter-subscribe form .btn:hover {
+  opacity: 1;
+}
+
+.newsletter-subscribe form .btn:active {
+  transform: translateY(1px);
+}
+
+.newsletter-subscribe form .btn-primary {
+  background-color: #055ada !important;
+  color: #fff;
+  outline: none !important;
+}
+
+
+.newsletter {
+  color: #1c5c93 !important;
+}
+
+
+/* Add this to your CSS file */
+.app-content {
+  padding-left: 250px;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding-left: 5px;
+  }
+}
+
+.team .member .pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px; /* Set the desired height */
+  overflow: hidden;
+}
+
+.team .member .pic img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.team .member-info {
+  text-align: center;
+}
+
+.team .social a {
+  margin-right: 10px;
+  color: #333; /* Adjust color as needed */
+  font-size: 1.2rem; /* Adjust size as needed */
+}
+.logo-img {
+  width: 50px; /* Adjust the size as needed */
+  height: auto;
+  margin-bottom: 10px; /* Space between the logo and the text */
+  display: block;
+}
+
+.logo-heading {
+  display: flex;
+  align-items: justify;
+}
+
+.logo-img {
+  width: 70px; /* Adjust size as needed */
+  height: auto;
+}
+
+h4 {
+  margin: 0; /* Remove default margin */
+}
+
+.icon-boundary {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #007bff; /* Adjust the color as needed */
+  border-radius: 50%; /* Makes the boundary circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Center the icon boundary */
+}
+
+.tm-icon {
+  color: #007bff; /* Adjust the icon color as needed */
+}
+
+
+.section-title {
+  position: relative;
+  padding-bottom: 1.5rem; /* Adjust spacing as needed */
+}
+
+.try-now-link {
+  position: absolute;
+  right: 0;
+  bottom: 6.5rem;
+  font-size: 0.875rem; /* Adjust the size as needed */
+  text-decoration: none;
+  color: #007bff; /* Adjust the color as needed */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.try-now-link i {
+  font-size: 0.75rem; /* Adjust the icon size as needed */
+}
+
+@media (max-width: 768px) {
+  .section-title {
+      position: static;
+      text-align: center;
+  }
+
+  .try-now-link {
+      position: static;
+      display: inline-block;
+      margin-top: 1rem; /* Add some space above the link */
+      font-size: 0.75rem; /* Adjust the size for smaller screens */
+  }
+}
+/* General styles for the navigation menu */
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.nav-menu ul li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.nav-menu ul li a {
+  color: #fff;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.nav-menu ul li a:hover {
+  background-color: #155a7a; /* Slightly darker shade for hover effect */
+}
+
+/* Dropdown icon */
+.dropdown-icon {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+
+/* Mobile view adjustments */
+@media (max-width: 798px) {
+  .nav-menu {
+    display: none;
+    background: #1c5c93;
+  }
+
+  .logo {
+    height: 30px; /* Set height to 30px in mobile view */
+    width: 90px;
+  }
+  .mobile-menu-open .nav-menu {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+
+  }
+
+  .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+
+  .nav-menu .drop-down ul {
+    display: none; /* Hide dropdown items initially */
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .nav-menu .drop-down ul.active {
+    display: block; /* Show dropdown items when active */
+  }
+
+  .mobile-nav-toggle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    background: none;
+    border: none;
+    z-index: 1000;
+  }
+}
+
+/* Styles for desktop view */
+@media (min-width: 1000px) {
+  .nav-menu {
+    display: block;
+  }
+
+  .nav-menu ul {
+    display: flex; /* Align links horizontally */
+    flex-direction: row;
+  }
+
+  .nav-menu ul li {
+    margin: 0 10px;
+  }
+
+  .nav-menu .drop-down ul {
+    display: none; /* Hide dropdown items by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+
+  .nav-menu .drop-down:hover ul {
+    display: block; /* Show dropdown items on hover */
+  }
+}
+
+
+.portfolio-wrap img {
+  height: 500px; /* Set your desired height */
+  object-fit: cover; /* Maintains aspect ratio and fills the container */
+  width: 100%; /* Ensures the image fills the width of its container */
+}
+@media (max-width: 768px) {
+  .portfolio-wrap img {
+    height: 200px; /* Adjust height for smaller screens */
+  }
+}
+

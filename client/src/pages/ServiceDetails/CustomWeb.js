@@ -1,8 +1,35 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Navbar from '../LandingPage/Navbar';
 import Footer from '../LandingPage/Footer';
 
 const CustomWeb = () => {
+    const [result, setResult] = React.useState("");
+    var [show, setshow] = useState(false)
+  
+    const onSubmit = async (event) => {
+      event.preventDefault();
+      setResult("Sending....");
+      const formData = new FormData(event.target);
+  
+      formData.append("access_key", "ad76d720-b8ed-4a9f-bf88-99fbaa9297f8");
+  
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+        setshow(true)
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    };
+  
     return (
         <div>
             <Navbar/>
@@ -54,7 +81,7 @@ const CustomWeb = () => {
 
              
                     <div className="row d-flex">
-                        <div className="col-lg-9 mt-4 d-flex align-items-stretch">
+                        <div className="col-lg-8 mt-4 d-flex align-items-stretch">
                             <div className="card w-100">
                                 <div className="card-body">
                                     <ul className="nav nav-tabs" id="myTab" role="tablist">
@@ -144,20 +171,39 @@ const CustomWeb = () => {
                             </div>
                         </div>
 
-                        <div className="col-lg-3 mt-4 d-flex align-items-stretch">
+                        <div className="col-lg-4 mt-4 d-flex align-items-stretch">
                             <div className="card w-100">
                                 <div className="card-header text-center bg-primary text-white">
-                                    <h5>Contact Us for Pricing</h5>
+                                    <h5>Contact Us for More Details</h5>
                                 </div>
                                 <div className="card-body">
-                                    <p className="card-text">
-                                        Reach out to our team to discuss your custom web application development needs. We offer tailored solutions and flexible pricing to fit your budget and project scope.
-                                    </p>
+                                <div class="col-lg-12">
+          {
+                                show ? <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
+                                    Thanks to Share Your Query With US!!! Our Team Will Contact You Soon!!!
+                                </div> : ""
+                            }
+            <form onSubmit={onSubmit}>
+              <div class="form-row">
+                <div class="col-lg-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-lg-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+             
+            </form>
+          </div>
                                 </div>
                                 <div className="card-footer text-center">
-                                    <a href="#" className="btn btn-primary">
-                                        Get a Quote
-                                    </a>
+                                <div class="text-center"><button className='btn btn-primary w-40' type="submit">Send Message</button></div>
                                 </div>
                             </div>
                         </div>

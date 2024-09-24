@@ -68,6 +68,16 @@ import DigitalTwins from './pages/ServiceDetails/DigitalTwins.js';
 import Reasearch from './pages/ServiceDetails/Reasearch.js';
 import RobotProcess from './pages/ServiceDetails/RobotProcess.js';
 import StemPrograms from './pages/ServiceDetails/StemPrograms.js';
+import RoboticAutomation from './pages/BlogDetails/RoboticAutomation.js';
+import MachineLearningServices from './pages/BlogDetails/MachineLearning.js';
+import DataAnalysisServices from './pages/BlogDetails/DataAnalytics.js';
+import WebDevelopmentServices from './pages/BlogDetails/FullStackWebDevelopment.js';
+import VLSIServices from './pages/BlogDetails/VLSI.js';
+import AIServices from './pages/BlogDetails/ArtificialIntelligence.js';
+import BlogForm from './pages/Admin/Blogs/BlogForm.js';
+import BlogDetails from './pages/Admin/Blogs/blogAll.js';
+import BlogCard from './pages/Admin/Blogs/blogCards.js';
+import ChannelDetails from './pages/LandingPage/ChannelsDetails.js';
 
 const Routing = () => {
 
@@ -85,7 +95,11 @@ const Routing = () => {
       <Route exact path="/robotProcess"  element={<RobotProcess />} />
       <Route exact path="/stemPrograms"  element={<StemPrograms />} />  
       <Route exact path="/training"  element={<AdvancedGeAi />} />
-      
+
+      <Route exact path="/blogCard"  element={<BlogCard />} />
+
+      <Route exact path="/blog/:id" element={<BlogDetails />} />
+<Route exact path="/channel/:channelid" element={<ChannelDetails />} />
 
       <Route path="/" element={<StudentRoute><Home /></StudentRoute>} />
         <Route path="/messages" element={<StudentRoute><Messages /></StudentRoute>} />
@@ -120,10 +134,41 @@ const Routing = () => {
       <Route exact path="/courses"  element={<Courses />}>
   
       </Route>
+
+      <Route exact path="/machineLearningServices"  element={<MachineLearningServices />}>
+  
+  </Route>
+
+
+  <Route exact path="/dataAnalysisServices"  element={<DataAnalysisServices />}>
+  
+  </Route>
+
+  
+  <Route exact path="/aIServices"  element={<AIServices />}>
+  
+  </Route>
+
+  <Route exact path="/blogForm"  element={<BlogForm />}>
+  
+  </Route>
+
+
+  
+  <Route exact path="/vLSIServices"  element={<VLSIServices />}>
+  
+  </Route>
+
+  
+
+  <Route exact path="/roboticAutomation"  element={<RoboticAutomation />}>
+  
+  </Route>
       
       <Route exact path="/lmsDetails"  element={<LMS />}>
   
   </Route>
+
       
       <Route exact path="/textTranslator"  element={<TextTranslator />}>
   
@@ -151,6 +196,11 @@ const Routing = () => {
   </Route>
 
   
+
+  <Route exact path="/webDevelopmentServices"  element={<WebDevelopmentServices />}>
+  
+  </Route>
+
 
   
   <Route exact path="/blogChannelInternational"  element={<BlogsChannelInternational />}>

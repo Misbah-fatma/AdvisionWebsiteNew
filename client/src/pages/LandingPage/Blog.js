@@ -1,112 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Newsletter from './News';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
+const BlogList = () => {
+  const [blogs, setBlogs] = useState([]);
+  const axiosInstance = axios.create({ baseURL: process.env.REACT_APP_API_URL });
 
-export default function Courses() {
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axiosInstance.get('/blogsall');
+        setBlogs(response.data);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <>
       <Navbar />
 
-      <section id="portfolio" className="portfolio section-bg">
+      <section id="products" className="products section-bg">
         <div className="container">
-          <div className="section-title mt-4">
-            <h2 className='py-2'>Explore Our Recent AI Blogs</h2>
-            <p>Discover our innovative blogs on AI and related technologies, covering a range of topics from robotics to data analysis.</p>
+          <div className="section-title">
+            <div className="btn btn-sm border rounded-pill text-primary px-3 mb-3 mt-4">Our Blogs</div>
+            <h2 className="mb-4">Explore Our Recent Blogs</h2>
+            <p className='text-center'>Discover our latest posts and insights.</p>
           </div>
 
-          <div className="row portfolio-container">
-            {/* Robotic Automation */}
-            <div className="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div className="portfolio-wrap">
-                <img src="assets/img/project-1.jpg" className="img-fluid" alt="Robotic Automation"/>
-                <div className="portfolio-info">
-                  <h4>Robotic Automation</h4>
-                  <p>Coming Soon</p>
-                  <div className="portfolio-links">
-                    <Link to="/contact" className="venobox" title="Robotic Automation"><i className="icofont-eye"></i></Link>
-                    <Link to="/contact" title="More Details"><i className="icofont-external-link"></i></Link>
-                  </div>
+          <div className="row g-4">
+            {blogs.map((blog) => (
+              <div key={blog._id} className="col-md-4">
+                <div className="service-item d-flex flex-column justify-content-center text-center rounded h-100 shadow border p-3">
+                  {blog.image ? (
+                    <img src={blog.image} className="img-fluid mb-3" alt={blog.heading} />
+                  ) : (
+                    <div className="img-placeholder mb-3">No Image</div>
+                  )}
+                  <h4 className="title" style={{ color: "#007bff" }}>{blog.heading}</h4>
+                  <p className="description">{blog.description}</p>
+                  <Link to={`/blog/${blog._id}`} className="btn-get-started animated fadeInUp scrollto">
+                    Read More <FontAwesomeIcon icon={faArrowRight} />
+                  </Link>
                 </div>
               </div>
-            </div>
-
-            {/* Machine Learning */}
-            <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div className="portfolio-wrap">
-                <img src="assets/img/project-2.jpg" className="img-fluid" alt="Machine Learning"/>
-                <div className="portfolio-info">
-                  <h4>Machine Learning</h4>
-                  <p>Coming Soon</p>
-                  <div className="portfolio-links">
-                    <Link to="/contact" className="venobox" title="Machine Learning"><i className="icofont-eye"></i></Link>
-                    <Link to="/contact" title="More Details"><i className="icofont-external-link"></i></Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Data Analysis */}
-            <div className="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div className="portfolio-wrap">
-                <img src="assets/img/project-3.jpg" className="img-fluid" alt="Data Analysis"/>
-                <div className="portfolio-info">
-                  <h4>Data Analysis</h4>
-                  <p>Coming Soon</p>
-                  <div className="portfolio-links">
-                    <Link to="/contact" className="venobox" title="Data Analysis"><i className="icofont-eye"></i></Link>
-                    <Link to="/contact" title="More Details"><i className="icofont-external-link"></i></Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* FullStack Web Development */}
-            <div className="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div className="portfolio-wrap">
-                <img src="assets/img/project-1.jpg" className="img-fluid" alt="FullStack Web Development"/>
-                <div className="portfolio-info">
-                  <h4>FullStack Web Development</h4>
-                  <p>Coming Soon</p>
-                  <div className="portfolio-links">
-                    <Link to="/contact" className="venobox" title="FullStack Web Development"><i className="icofont-eye"></i></Link>
-                    <Link to="/contact" title="More Details"><i className="icofont-external-link"></i></Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* VLSI */}
-            <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div className="portfolio-wrap">
-                <img src="assets/img/project-2.jpg" className="img-fluid" alt="VLSI"/>
-                <div className="portfolio-info">
-                  <h4>VLSI</h4>
-                  <p>Coming Soon</p>
-                  <div className="portfolio-links">
-                    <Link to="/contact" className="venobox" title="VLSI"><i className="icofont-eye"></i></Link>
-                    <Link to="/contact" title="More Details"><i className="icofont-external-link"></i></Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Artificial Intelligence */}
-            <div className="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div className="portfolio-wrap">
-                <img src="assets/img/bgg1.jpg" className="img-fluid" alt="Microprocessor"/>
-                <div className="portfolio-info">
-                  <h4>Artificial Intelligence</h4>
-                  <p>Coming Soon</p>
-                  <div className="portfolio-links">
-                    <Link to="/contact" className="venobox" title="Microprocessor"><i className="icofont-eye"></i></Link>
-                    <Link to="/contact" title="More Details"><i className="icofont-external-link"></i></Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -114,4 +59,6 @@ export default function Courses() {
       <Footer />
     </>
   );
-}
+};
+
+export default BlogList;

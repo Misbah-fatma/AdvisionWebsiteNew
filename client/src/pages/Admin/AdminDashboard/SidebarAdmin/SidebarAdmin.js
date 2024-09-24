@@ -142,6 +142,12 @@ function ResponsiveDrawer(props) {
           </NavLink>
         </div>
         <div className="option">
+          <NavLink to="/blogForm" activeClassName="active-link vertical-nav-menu">
+            {iconMapping['/admin-companyChannelcreated']}
+            &nbsp;  Blog
+          </NavLink>
+        </div>
+        <div className="option">
           <NavLink to="/admin-channelPartner" activeClassName="active-link vertical-nav-menu">
             {iconMapping['/admin-channelPartner']}
             &nbsp;  Add Channel Partner

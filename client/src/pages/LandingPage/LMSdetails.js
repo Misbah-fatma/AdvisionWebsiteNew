@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 
 const LMS = () => {
     return (
@@ -234,7 +235,9 @@ Designed to accommodate educational institutions of all sizes, our LMS offers sc
           </ul>
         </div>
         <div className="card-footer text-center mt-auto">
-          <a href="#" className="btn btn-primary">Subscribe Now</a>
+        <Link to="/contact" className="btn btn-primary">
+                    Subscribe Now
+                  </Link>
         </div>
       </div>
     </div>

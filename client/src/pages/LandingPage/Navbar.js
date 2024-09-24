@@ -62,29 +62,37 @@ export default function Navbar() {
             <i className="icofont-phone"></i> <span className="text-white"> +91 8810316395 </span>
           </div>
           <div className="social-links float-right">
-            <a href="#" className="twitter">
-              <i className="icofont-twitter" style={{ color: '#fff' }}></i>
-            </a>
-            <a href="#" className="facebook">
-              <i className="icofont-facebook" style={{ color: '#fff' }}></i>
-            </a>
-            <a href="#" className="instagram">
-              <i className="icofont-instagram" style={{ color: '#fff' }}></i>
-            </a>
-            <a href="#" className="skype">
-              <i className="icofont-skype" style={{ color: '#fff' }}></i>
-            </a>
-            <a href="#" className="linkedin">
-              <i className="icofont-linkedin" style={{ color: '#fff' }}></i>
-            </a>
-          </div>
+  <a href="#" className="upwork">
+    {/* Upwork Icon using SVG */}
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.9 14.49L14.5 16l-2.4 1.1c-.28.14-.6.21-.9.21-.58 0-1.15-.22-1.58-.65-.86-.85-1.06-2.1-.58-3.16l2.7-6.12c.1-.22.32-.35.56-.35s.46.13.56.35l1.43 3.22c.13.28.42.48.74.48s.61-.2.74-.48l.55-1.24 1.43 3.22c.43 1.06.23 2.31-.58 3.16-.43.43-1 .65-1.58.65-.3 0-.62-.07-.9-.21l-.91-.42z"
+        fill="#fff"
+      />
+    </svg>
+  </a>
+  <a href="#" className="linkedin">
+    <i className="icofont-linkedin" style={{ color: '#fff' }}></i>
+  </a>
+  <a href="#" className="youtube">
+    <i className="icofont-youtube" style={{ color: '#fff' }}></i>
+  </a>
+</div>
+
+
         </div>
       </section>
 
       <header id="header" className={`sticky ${menuOpen ? 'mobile-menu-open' : ''}`}>
         <div className="container">
           <div className="logo float-left">
-            <img src="logo10.png" alt="Logo" className="logo"/>
+            <img src="/logo10.png" alt="Logo" className="logo"/>
           </div>
 
           <nav className={`nav-menu float-right d-lg-block ${menuOpen ? 'd-block' : ''}`}>

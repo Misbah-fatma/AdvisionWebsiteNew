@@ -26,9 +26,8 @@ app.use("/api/cart", require("./routes/cartRoutes"));
 app.use('/api/items', require('./routes/SubCategoryRoute'));
 app.use('/api/', require('./routes/frontendsRoute'));
 app.use('/api/', require('./routes/channelRoute'));
+app.use('/api/', require('./routes/N&IChannelRoutes'));
 app.use('/api/', require('./routes/blogRoutes'));
-
-
 
 // Deploy
 if (process.env.NODE_ENV === 'production') {

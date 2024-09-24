@@ -1,4 +1,4 @@
-const Blog = require('../model/blogModel');
+const Blog = require('../model/N&IChannelModel');
 const cloudinary=require('../middlewares/cloudinary')
 
 exports.createBlog = async (req, res) => {

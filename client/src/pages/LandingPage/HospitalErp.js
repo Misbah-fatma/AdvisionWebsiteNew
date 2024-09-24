@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { Link } from 'react-router-dom';
 
 const HospitalErp = () => {
 
@@ -101,7 +102,9 @@ const HospitalErp = () => {
           </ul>
         </div>
         <div className="card-footer text-center">
-          <a href="#" className="btn btn-primary">Subscribe Now</a>
+        <Link to="/contact" className="btn btn-primary">
+                    Subscribe Now
+                  </Link>
         </div>
       </div>
     </div>
